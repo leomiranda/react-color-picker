@@ -35,12 +35,16 @@ const palette = [
 ];
 function App() {
 	const [color, setColor] = useState('#000000');
+	const suggestedPaletteColor = 'secondary';
+	const suggestedColor = palette.find(
+		(p) => p.slug === suggestedPaletteColor
+	)?.value;
 	const paletteColors = palette.map((p) => p.value);
 	return (
 		<div className="container mx-auto p-4 max-w-md">
 			<Card>
 				<CardHeader>
-					<CardTitle>Seletor de Cores</CardTitle>
+					<CardTitle>Seletor de Cor</CardTitle>
 				</CardHeader>
 				<CardContent className="space-y-4">
 					<div className="space-y-2">
@@ -59,12 +63,22 @@ function App() {
 						</div>
 					</div>
 
-					<div className="space-y-2">
-						<Label>Paleta de Cores</Label>
-						<CirclePicker
-							colors={paletteColors}
-							onChange={(color) => setColor(color.hex)}
-						/>
+					<div className="flex gap-4">
+						<div className="space-y-2">
+							<Label>Paleta de Cores</Label>
+							<CirclePicker
+								colors={paletteColors}
+								onChange={(color) => setColor(color.hex)}
+							/>
+						</div>
+
+						<div className="space-y-2">
+							<Label>Cor Sugerida</Label>
+							<CirclePicker
+								colors={suggestedColor ? [suggestedColor] : []}
+								onChange={(color) => setColor(color.hex)}
+							/>
+						</div>
 					</div>
 
 					<div className="space-y-2">
