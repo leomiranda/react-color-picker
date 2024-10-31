@@ -4,11 +4,9 @@
 
 A wrapper around `react-color` configured for custom themes and design systems. Built with TypeScript, Tailwind CSS, and shadcn/ui.
 
-[Demo]([https://react-color-picker.vercel.app](https://react-color-picker-gray.vercel.app/))
+[Demo](https://react-color-picker-gray.vercel.app/)
 
 ## Overview
-
-<img width="433" alt="image" src="https://github.com/user-attachments/assets/7f6407fa-abc4-429d-9be8-bcc321673922">
 
 Unlike traditional color pickers, this component focuses on design system consistency by limiting color selection to 5 variants of each chosen color. This approach ensures color harmony while maintaining flexibility in your design choices.
 
@@ -64,6 +62,8 @@ pnpm dev
 ## Components
 
 ### PopoverColorPicker
+
+<img width="433" alt="image" src="https://github.com/user-attachments/assets/7f6407fa-abc4-429d-9be8-bcc321673922">
 
 A compact color picker that opens in a popover when clicked. Perfect for inline color selection.
 
