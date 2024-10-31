@@ -1,10 +1,8 @@
-import { CirclePicker } from 'react-color';
 import { useState } from 'react';
-import Slider from 'react-color/lib/components/slider/Slider';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+
 import './index.css';
+import { CardColorPicker } from './components/CardColorPicker';
+import { PopoverColorPicker } from './components/PopoverColorPicker';
 
 const palette = [
 	{
@@ -42,51 +40,21 @@ function App() {
 	const paletteColors = palette.map((p) => p.value);
 	return (
 		<div className="container mx-auto p-4 max-w-md">
-			<Card>
-				<CardHeader>
-					<CardTitle>Seletor de Cor</CardTitle>
-				</CardHeader>
-				<CardContent className="space-y-4">
-					<div className="space-y-2">
-						<Label htmlFor="color-input">Valor Hexadecimal</Label>
-						<div className="flex gap-2">
-							<Input
-								id="color-input"
-								value={color}
-								onChange={(e) => setColor(e.target.value)}
-							/>
-							<div
-								className="w-12 h-10 rounded border"
-								style={{ backgroundColor: color }}
-								title="Cor selecionada"
-							/>
-						</div>
-					</div>
-
-					<div className="flex gap-4">
-						<div className="space-y-2">
-							<Label>Paleta de Cores</Label>
-							<CirclePicker
-								colors={paletteColors}
-								onChange={(color) => setColor(color.hex)}
-							/>
-						</div>
-
-						<div className="space-y-2">
-							<Label>Cor Sugerida</Label>
-							<CirclePicker
-								colors={suggestedColor ? [suggestedColor] : []}
-								onChange={(color) => setColor(color.hex)}
-							/>
-						</div>
-					</div>
-
-					<div className="space-y-2">
-						<Label>Ajuste de Cor</Label>
-						<Slider color={color} onChange={(color) => setColor(color.hex)} />
-					</div>
-				</CardContent>
-			</Card>
+			<div className="flex flex-col gap-4">
+				<h1 className="text-2xl font-bold mb-4">Color Picker</h1>
+				<CardColorPicker
+					color={color}
+					paletteColors={paletteColors}
+					suggestedColor={suggestedColor}
+					onColorChange={setColor}
+				/>
+				<PopoverColorPicker
+					color={color}
+					paletteColors={paletteColors}
+					suggestedColor={suggestedColor}
+					onColorChange={setColor}
+				/>
+			</div>
 		</div>
 	);
 }
