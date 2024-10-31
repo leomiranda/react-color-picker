@@ -1,6 +1,8 @@
 # React Color Picker Components
 
+
 <img width="585" alt="image" src="https://github.com/user-attachments/assets/9b60fdf5-fff7-4df0-b8bc-a5cd91bf5ed3">
+
 
 A wrapper around `react-color` configured for custom themes and design systems. Built with TypeScript, Tailwind CSS, and shadcn/ui.
 
@@ -63,7 +65,9 @@ pnpm dev
 
 ### PopoverColorPicker
 
+
 <img width="433" alt="image" src="https://github.com/user-attachments/assets/7f6407fa-abc4-429d-9be8-bcc321673922">
+
 
 A compact color picker that opens in a popover when clicked. Perfect for inline color selection.
 
