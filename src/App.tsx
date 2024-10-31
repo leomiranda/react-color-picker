@@ -4,6 +4,7 @@ import { Label } from './components/ui/label';
 import { CardColorPicker } from './components/CardColorPicker';
 import { PopoverColorPicker } from './components/PopoverColorPicker';
 import Slider from 'react-color/lib/components/slider/Slider';
+import './index.css';
 
 const palette = [
 	{
